@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .btn-primary {
+    @apply px-4 py-2 bg-primary text-white font-medium rounded-lg hover:bg-primary-dark transition;
+  }
+
+  .card {
+    @apply bg-white shadow-md rounded-2xl p-4;
+  }
+}
+@font-face {
+  font-family: "Century Schoolbook";
+  src: local("Century Schoolbook"), local("CenturySchoolbook"),
+       url("https://fonts.cdnfonts.com/s/17052/CenturySchoolbook.woff") format("woff");
+}
+
+body {
+  font-family: "Century Schoolbook", serif;
+}
+
