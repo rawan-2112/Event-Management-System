@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Event-Management-System/static/css/main.e6625f96.css",
+    "main.js": "/Event-Management-System/static/js/main.27af119e.js",
+    "index.html": "/Event-Management-System/index.html",
+    "main.e6625f96.css.map": "/Event-Management-System/static/css/main.e6625f96.css.map",
+    "main.27af119e.js.map": "/Event-Management-System/static/js/main.27af119e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6625f96.css",
+    "static/js/main.27af119e.js"
+  ]
+}
