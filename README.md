@@ -32,7 +32,7 @@ Built with **MERN Stack (MongoDB, Express, React, Node.js)**.
 - 
 I tried multiple times to deploy the project online (Netlify, Render, Vercel), but unfortunately I couldn’t complete the deployment successfully  
 https://event-management-system-j3ti-lehdjfmlc-rawan-2112s-projects.vercel.app
-npm start https://stellular-sunburst-6f5034.netlify.app/ 
+ https://stellular-sunburst-6f5034.netlify.app/ 
 
 However, the full project is working fine locally.
 
@@ -43,5 +43,5 @@ npm run dev
 To run the frontend:
 
 cd frontend/client
-
+npm start
 
