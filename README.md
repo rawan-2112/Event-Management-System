@@ -36,10 +36,11 @@ However, the full project is working fine locally.
 
 To run the backend:
 
-npm run dev
+npm run dev 
+https://event-management-system-j3ti-lehdjfmlc-rawan-2112s-projects.vercel.app
 
 
 To run the frontend:
 
 cd frontend/client
-npm start
+npm start https://stellular-sunburst-6f5034.netlify.app/
