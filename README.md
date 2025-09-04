@@ -28,7 +28,16 @@ Built with **MERN Stack (MongoDB, Express, React, Node.js)**.
 - **Database:** MongoDB (Mongoose ODM).
 - **Other:** QRCode Generator, bcryptjs, jsonwebtoken.
 
+##Sample Data (Seeder)
 
+The project includes a seed script to populate the MongoDB database with sample data for testing and demonstration purposes.
+
+File location:
+
+backend/scripts/seed.js 
+
+To run the seeder and insert the sample data:
+npm run seed
 - 
 I tried multiple times to deploy the project online (Netlify, Render, Vercel), but unfortunately I couldn’t complete the deployment successfully  
 https://event-management-system-j3ti-lehdjfmlc-rawan-2112s-projects.vercel.app
