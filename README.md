@@ -37,6 +37,7 @@ File location:
 backend/scripts/seed.js  
 
 to run the seeder and insert the sample data:
+
 npm run seed
 
 
