@@ -17,7 +17,6 @@ import EventDetailsUser from "./pages/User/EventDetailsUser";
 import SeatSelection from "./components/SeatSelection";
 import Payment from "./pages/User/Payment";
 import Profile from "./pages/User/Profile"; 
-
 // Admin Pages
 import Dashboard from "./pages/Admin/Dashboard";
 import EventsDashboard from "./pages/Admin/EventsDashboard";
@@ -34,7 +33,7 @@ function AppContent() {
   const { role } = useAuth();
 
   return (
-    <Router basename={process.env.PUBLIC_URL}>
+    <Router>
       {role === "admin" ? (
         <NavbarAdmin />
       ) : role === "user" ? (
@@ -44,12 +43,12 @@ function AppContent() {
       )}
 
       <Routes>
-        {/* Public Routes */}
+        {/*  Public Routes */}
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
 
-        {/* User Routes */}
+        {/*  User Routes */}
         <Route path="/events" element={<PrivateRoute><Events /></PrivateRoute>} />
         <Route path="/events/:eventId" element={<PrivateRoute><EventDetailsUser /></PrivateRoute>} />
         <Route path="/events/book/:eventId" element={<PrivateRoute><SeatSelection /></PrivateRoute>} />

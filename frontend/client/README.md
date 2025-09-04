@@ -23,10 +23,23 @@ Built with **MERN Stack (MongoDB, Express, React, Node.js)**.
 
 ##  Tech Stack
 
-- **Frontend:** React, TailwindCSS, Axios, React Router.
+- **Frontend:** React, TailwindCSS, Axios, React Router. 
 - **Backend:** Node.js, Express.js, JWT Authentication.
 - **Database:** MongoDB (Mongoose ODM).
 - **Other:** QRCode Generator, bcryptjs, jsonwebtoken.
 
 
+- 
+I tried multiple times to deploy the project online (Netlify, Render, Vercel), but unfortunately I couldn’t complete the deployment successfully due to build and routing issues.
 
+However, the full project is working fine locally.
+
+To run the backend:
+
+npm run dev
+
+
+To run the frontend:
+
+cd frontend/client
+npm start
