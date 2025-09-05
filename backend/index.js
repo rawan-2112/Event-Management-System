@@ -23,25 +23,40 @@ app.use(
   })
 );
 
-mongoose
-  .connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(() => console.log("✅ MongoDB Connected"))
-  .catch((err) => console.error("❌ DB Error:", err));
+
+if (process.env.MONGO_URI) {
+  mongoose
+    .connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
+    .then(() => console.log("✅ MongoDB Connected"))
+    .catch((err) => console.error("❌ DB Error:", err));
+
+  // المسارات الأصلية (تشتغل مع MongoDB)
+  app.use("/api/auth", authRoutes);
+  app.use("/api/users", userRoutes);
+  app.use("/api/profile", protect, profileRoutes); 
+  app.use("/api/events", eventRoutes);
+  app.use("/api/tickets", ticketRoutes);
+  app.use("/api/notifications", notificationRoutes);
+  app.use("/api/analytics", protect, authorize("admin"), analyticsRoutes);
+
+  app.get("/api/me", protect, async (req, res) => {
+    const user = await User.findById(req.user.id).select("-password");
+    res.json(user);
+  });
+
+} else {
+  console.log("⚡ Running in JSON mode (no MongoDB)");
+
+  const events = require("./data/events.json");
+  const users = require("./data/users.json");
+  const tickets = require("./data/tickets.json");
+
+  app.get("/api/events", (req, res) => res.json(events));
+  app.get("/api/users", (req, res) => res.json(users));
+  app.get("/api/tickets", (req, res) => res.json(tickets));
+}
 
 app.get("/", (req, res) => res.send("Backend is running 🚀"));
-
-app.use("/api/auth", authRoutes);
-app.use("/api/users", userRoutes);
-app.use("/api/profile", protect, profileRoutes); 
-app.use("/api/events", eventRoutes);
-app.use("/api/tickets", ticketRoutes);
-app.use("/api/notifications", notificationRoutes);
-app.use("/api/analytics", protect, authorize("admin"), analyticsRoutes);
-
-app.get("/api/me", protect, async (req, res) => {
-  const user = await User.findById(req.user.id).select("-password");
-  res.json(user);
-});
 
 app.use((err, req, res, next) => {
   console.error("🔥 ERROR:", err.stack);

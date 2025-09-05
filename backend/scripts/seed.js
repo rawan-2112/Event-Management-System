@@ -10,7 +10,6 @@ async function connectDB() {
   console.log("✅ DB connected");
 }
 
-// backend/scripts/seed.js
 async function createUserIfNotExists({ name, email, password, role }) {
   let user = await User.findOne({ email });
   if (!user) {
@@ -63,11 +62,9 @@ async function seed() {
     role: "user",
   });
 
-  // نظف الأحداث القديمة
   await Event.deleteMany({});
-  console.log("🧹 Cleared events collection");
+  console.log(" Cleared events collection");
 
-  // 3 أحداث مع حضور وسعر ومقاعد
   const eventsData = [
     {
       title: "Music Concert",
@@ -104,9 +101,8 @@ async function seed() {
     },
   ];
 
-  // أضف المقاعد لكل حدث
   for (const ev of eventsData) {
-    ev.seats = Event.generateSeatMap(6, 10); // 6 صفوف × 10 مقاعد
+    ev.seats = Event.generateSeatMap(6, 10); 
   }
 
   await Event.insertMany(eventsData);
