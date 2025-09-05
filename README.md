@@ -35,7 +35,9 @@ Built with **MERN Stack (MongoDB, Express, React, Node.js)**.
 The project includes **sample JSON data** to simulate users, events, and tickets for testing and demonstration purposes.
 
 Data files are located here:
+
 backend/data/
+
 ├── eventx.users.json
 ├── eventx.events.json
 └── eventx.tickets.json
@@ -55,7 +57,8 @@ cd backend
 npm install
 npm run dev
 
-Frontend
+Frontend 
+
 cd frontend/client
 npm install
 npm start
